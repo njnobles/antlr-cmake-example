@@ -44,4 +44,5 @@ build-test-with-fix.sh
 properly set in `antrl4_static` and `antlr4_shared` targets.
 
 There is also output on configure that shows the includes directories set on the 
-`antlr4_static` and `antlr4_shared` targets. Look for `antlr4_static_RUNTIME_INTERFACE_INCLUDES`.
+`antlr4_static` and `antlr4_shared` targets. Look for `antlr4_static_RUNTIME_INTERFACE_INCLUDES` 
+in the configure output.
