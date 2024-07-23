@@ -1,5 +1,5 @@
-echo "Building Test Project without fix"
-echo "Expect a failure with unable to find antlr4-runtime.h include"
+echo "Building Test Project with fix"
+echo "Expect Success"
 cd test-project
 mkdir build-with-fix
 cd build-with-fix
