@@ -3,6 +3,6 @@ cd %~dp0
 cd runtime-builder
 mkdir build-with-fix
 cd build-with-fix
-cmake .. -DWITH_FIX=ON
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DWITH_FIX=ON
 cmake --build .
 cmake --build . --target install
