@@ -2,19 +2,29 @@ cmake_minimum_required(VERSION 3.26)
 
 project("runtime-builder")
 
+option(WITH_FIX "Build with fix" OFF)
+
 set(CMAKE_CXX_STANDARD 17)
 
 set(ANTLR_BUILD_CPP_TESTS OFF)
 set(ANTLR4_INSTALL ON)
 
-set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_LIST_DIR}/../install")
+if(WITH_FIX)
+  set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_LIST_DIR}/../install-with-fix")
+  set(git_repo "https://github.com/njnobles/antlr4.git")
+  set(git_tag "1aae37de4145814c254d666816c12e3a059426f6")
+else()
+  set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_LIST_DIR}/../install")
+  set(git_repo "https://github.com/antlr/antlr4.git")
+  set(git_tag "b3bb7439546d2035203790d5513c505720cf0bdd")
+endif()
 
 include(FetchContent)
 
 FetchContent_Declare(
   antlr
-  GIT_REPOSITORY https://github.com/antlr/antlr4.git
-  GIT_TAG        b3bb7439546d2035203790d5513c505720cf0bdd
+  GIT_REPOSITORY ${git_repo}
+  GIT_TAG        ${git_tag}
   SOURCE_SUBDIR runtime/Cpp
 )
 
