@@ -21,6 +21,8 @@ Built artifacts are placed into a folder called `install` in the root of the rep
 
 ## test-project
 
+Build scripts for runtime-builder must be run before running these build scripts.
+
 This is a simple test project with a single main.cpp file that has `#include antlr4-runtime.h`.  
 The `with-fix` version will find antlr4-runtime from the `install-with-fix` folder and the non-`with-fix`  
 version will find antlr4-runtime from the `install` folder.
